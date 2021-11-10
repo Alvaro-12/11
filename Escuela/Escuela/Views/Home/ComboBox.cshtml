@@ -1,0 +1,32 @@
+﻿@model Escuela.Dominio.Erollement
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>ComboBox</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("getinformationcombobox", "Home", FormMethod.Post))
+    {
+
+        @*sirve para enviar peticiones, igual a lo de arriba xd
+            <form acction ="" method="">
+
+
+            </form>*@
+
+        @Html.DropDownListFor(a => a.CourseID, new SelectList(ViewBag.estadolistcourse, "Value", "Text"), "Selecciona un curso", new { @class = "form-control" })
+        <br />
+        @Html.DropDownListFor(a => a.StudentID, new SelectList(ViewBag.estadolsitestudents, "Value", "Text"), "Selecciona un Estudiante", new { @class = "form-control" })
+
+        <input type="submit" />
+        @Html.ActionLink("Ver Cursos", "Index", new { }, new { @class = "btn btn-success" })
+    }
+</body>
+</html>

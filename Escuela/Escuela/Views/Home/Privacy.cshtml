@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+
+<h1 style="border-top-color:darkcyan">Insertar</h1>
+@using (Html.BeginForm("GuardarDatos", "Estudiante", FormMethod.Post))
+{ 
+    <label for="StudentId ">2   </label>
+    <br />
+    <input  type="hidden" name="StudenId" value="@ViewBag.StudenId"/>
+    <br />
+
+    <label for="LastName">LastName</label>
+    <br />
+    <input  type="text" name="LastName" value="@ViewBag.LastName"/>
+    <br />
+
+    <label for="FirstMidName">FirstMidName</label>
+    <br />
+    <input type="text" name="FirstMidName" value="@ViewBag.FirstMidName"/>
+    <br />
+
+    <label for="ErollementsDate">ErollementsDate</label>
+    <br />
+   <input  type="text" name="ErollementsDate" value="@ViewBag.ErollementsDate"/>
+   <br />
+
+   <input style="color:red"  type="submit" value="Update"/>
+}

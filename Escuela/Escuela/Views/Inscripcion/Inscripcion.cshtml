@@ -1,0 +1,37 @@
+﻿@model Escuela.Dominio.Erollement
+@{
+    ViewData["Title"] = "Inscripcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Inscripcion</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ComboBox</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Registrar", "Inscripcion", FormMethod.Post))
+    {
+        @Html.DropDownListFor(a => a.CourseID, new SelectList(ViewBag.estadolistcourse, "Value", "Text"), "Selecciona un curso", new { @class = "form-control" })
+        <br />
+        @Html.DropDownListFor(a => a.StudentID, new SelectList(ViewBag.estadolsitestudents, "Value", "Text"), "Selecciona un Estudiante", new { @class = "form-control" })
+        <br />
+        <label for="Grade">Escriba un grado:( A, B, C, D)</label>
+        <br />
+        <input type="text" name="Grade" />
+        <br />
+        <br />
+        <input type="submit" />
+        <br />
+        <br />
+        @Html.ActionLink("Menu Principal", "Index", "EscuelaController1", new { }, new { @class = "btn btn-success" })
+        <br />
+        <br />
+        @Html.ActionLink("Ver tabla de inscritos", "Students", "Home", new { }, new { @class = "btn btn-success" })
+
+    }
+</body>
+</html>

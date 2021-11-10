@@ -1,0 +1,40 @@
+﻿@model Escuela.Dominio.Students
+@{
+    ViewData["Title"] = "RegistroEstudiantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+
+<div class="animate__animated animate__fadeInUpBig">
+    @using (Html.BeginForm("Registro", "Estudiantes", FormMethod.Post))
+    {
+
+        <h1>Agregar Nuevo Estudiante</h1>
+
+        <i class="fa fa-user-circle"></i>
+        <label><strong>Apellidos</strong></label>
+        <input asp-for="FirstMidName" type="text" />
+        <br />
+        <br />
+
+        <i class="fa fa-user-circle"></i>
+        <label><strong>Nombres</strong></label>
+        <input asp-for="LastName" type="text" />
+        <br />
+        <br />
+
+        <i class="fa fa-calendar-check"></i>
+        <label><strong>Fecha </strong>  </label>
+        <input asp-for="EnrrollmentsDate" type="datetime" />
+        <br />
+        <br />
+        <button type="submit">Enviar</button>
+        <br />
+        <br />
+        @Html.ActionLink("Menu Principal", "Index","EscuelaController1", new { }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Ver tabla estudiantes", "TablaEstudiantes", new { }, new { @class = "btn btn-success" })
+
+    }
+
+</div>

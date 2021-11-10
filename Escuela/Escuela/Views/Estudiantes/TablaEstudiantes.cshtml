@@ -1,0 +1,60 @@
+﻿@model List<Escuela.Dominio.Students>
+@{
+    ViewData["Title"] = "TablaEstudiantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+
+<h1>Tabla Estudiantes</h1>
+
+<div class="animate__animated animate__fadeInUpBig">
+    <table id="tablaestudiantes" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Fecha
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (var iteracion in Model)
+            {
+            <tr>
+                <td>@iteracion.LastName</td>
+                <td>@iteracion.FirstMidName</td>
+                <td>@iteracion.EnrrollmentsDate</td>
+                @*<td>@Html.ActionLink("Actualizar", "Update", new { id = iteracion.StudentId }, new { @class = "btn-danger" })</td>*@
+            </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+    <br />
+
+    @Html.ActionLink("Menu Principal", "Index","EscuelaController1", new { }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Registrar Nuevo Estudiante", "RegistroEstudiantes", new { }, new { @class = "btn btn-success" })
+
+    @section scripts{
+
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                var tabla = $('#tablaestudiantes').DataTable()
+            });
+        </script>
+    }
+</div>
+

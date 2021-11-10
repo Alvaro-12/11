@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "VerCursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+
+<h1>Cursos</h1>
+<div class="animate__animated animate__fadeInUpBig">
+    <table id="mitabla" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Course ID
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Credits
+                </th>
+            </tr>
+        </thead>
+    </table>
+
+    @Html.ActionLink("Menu Principal", "Index", "EscuelaController1", new { }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Registrar Nuevos Cursos", "RegistrarCursos", new { }, new { @class = "btn btn-success" })
+
+    @section scripts{
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                var tabla = $('#mitabla').DataTable({
+                    "ajax": {
+                        "url": '/Home/GetAll',
+                        "type": "get",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "couserId", "name": "couserId", "autoWidth": true },
+                        { "data": "title", "name": "title", "autoWidth": true },
+                        { "data": "credits", "name": "credits", "autoWidth": true }
+                    ]
+                });
+            });
+        </script>
+    }
+</div>

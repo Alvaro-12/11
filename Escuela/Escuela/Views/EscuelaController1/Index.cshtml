@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+<h1>Bienvenido</h1>
+<h2>¿Donde desea acceder?</h2>
+<div  class="animate__animated animate__backInUp">
+    <br />
+    <i class="fa fa-user-circle"></i>
+    @Html.ActionLink("Ver Estudiantes", "TablaEstudiantes","Estudiantes", new { }, new { @class = "btn btn-success" })
+    <br />
+    <br />
+    <i class="fa fa-book-reader"></i>
+    @Html.ActionLink("Registrar Nuevos Estudiantes", "RegistroEstudiantes","Estudiantes", new { }, new { @class = "btn btn-success" })
+    <br />
+    <br />
+    <i class="fa fa-align-justify"></i>
+    @Html.ActionLink("Ver Cursos","VerCursos", "Cursos", new { }, new { @class = "btn btn-success" })
+    <br />
+    <br />
+    <i class="fa fa-book"></i>
+    @Html.ActionLink("Registrar Nuevos Cursos", "RegistrarCursos","Cursos", new { }, new { @class = "btn btn-success" })
+    <br />
+    <br />
+    <i class="fa fa-address-book"></i>
+    @Html.ActionLink("Registrar Estudiantes en un curso", "Inscripcion","Inscripcion", new { }, new { @class = "btn btn-success" })
+</div>
+

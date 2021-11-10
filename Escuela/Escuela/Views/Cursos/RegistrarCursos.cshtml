@@ -1,0 +1,33 @@
+﻿@model Escuela.Dominio.Course
+@{
+    ViewData["Title"] = "RegistrarCursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="https://kit.fontawesome.com/8da59f9c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+
+<div class="animate__animated animate__fadeInUpBig">
+    @using (Html.BeginForm("Registro", "Cursos", FormMethod.Post))
+    {
+        <h1>Agregar Nuevo Curso</h1>
+
+        <i class="fa fa-user-circle"></i>
+        <label><strong>Titulo</strong></label>
+        <input asp-for="Title" type="text" />
+        <br />
+        <br />
+        <i class="fa fa-user-circle"></i>
+        <label><strong>Creditos</strong></label>
+        <input asp-for="Credits" type="text" />
+        <br />
+        <br />
+        <button type="submit">Enviar </button>
+    }
+
+    @Html.ActionLink("Menu Principal", "Index", "EscuelaController1", new { }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Ver los Cursos", "VerCursos", new { }, new { @class = "btn btn-success" })
+
+</div>
+
+
+
