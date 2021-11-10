@@ -48,19 +48,15 @@ namespace Escuela.Controllers
             return Redirect("/Estudiantes/TablaEstudiantes");
         }
 
-        //public IActionResult Update(int StudentId, string LastName, string FirstMidName, string ErollementsDate)
-        //{
-        //    ViewBag.StudentId = StudentId;
-        //    ViewBag.LastName = LastName;
-        //    ViewBag.FirstMidName = FirstMidName;
-        //    ViewBag.ErollementsDate = ErollementsDate;
-        //    return View("Insertar");
-        //}
-
         //public IActionResult update(Students students)
         //{
 
 
+        //    return View();
+        //}
+
+        //public IActionResult delet()
+        //{
         //    return View();
         //}
     }

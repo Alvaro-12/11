@@ -13,10 +13,10 @@
         <thead>
             <tr>
                 <th>
-                    Nombre
+                    Apellidos
                 </th>
                 <th>
-                    Apellidos
+                    Nombre
                 </th>
                 <th>
                     Fecha
@@ -30,10 +30,11 @@
             @foreach (var iteracion in Model)
             {
             <tr>
-                <td>@iteracion.LastName</td>
                 <td>@iteracion.FirstMidName</td>
+                <td>@iteracion.LastName</td>
                 <td>@iteracion.EnrrollmentsDate</td>
-                @*<td>@Html.ActionLink("Actualizar", "Update", new { id = iteracion.StudentId }, new { @class = "btn-danger" })</td>*@
+                @*<td>@Html.ActionLink("Actualizar", "Update", new { id = iteracion.StudentId }, new { @class = "btn-danger" })</td>
+                <td>@Html.ActionLink("Eliminar", "Delet", new { id = iteracion.StudentId }, new { @class = "btn-danger" })</td>*@
             </tr>
 
             }
